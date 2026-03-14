@@ -50,6 +50,10 @@ else
 from transformers import AutoModel
 import torch, os
 
+# NOTE: trust_remote_code=True is required by nvidia/MambaVision-T-1K.
+# This is an official NVIDIA model repository on HuggingFace.
+# Review the model code at https://huggingface.co/nvidia/MambaVision-T-1K
+# before running in sensitive environments.
 print('[INFO] Loading MambaVision-T-1K from nvidia/MambaVision-T-1K...')
 model = AutoModel.from_pretrained('nvidia/MambaVision-T-1K', trust_remote_code=True)
 
